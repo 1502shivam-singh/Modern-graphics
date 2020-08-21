@@ -1,2 +1,3 @@
 # Modern-graphics
-All about image processing 
+
+All about Digital image processing implemented in practice.
