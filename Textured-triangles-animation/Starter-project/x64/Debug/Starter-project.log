@@ -1,0 +1,4 @@
+﻿  Source.cpp
+g:\projects\computer-graphics\starter-project\starter-project\src\shader.h(43): warning C4101: 'e': unreferenced local variable
+  Starter-project.vcxproj -> G:\Projects\Computer-graphics\Starter-project\x64\Debug\Starter-project.exe
+  Starter-project.vcxproj -> G:\Projects\Computer-graphics\Starter-project\x64\Debug\Starter-project.pdb (Partial PDB)
