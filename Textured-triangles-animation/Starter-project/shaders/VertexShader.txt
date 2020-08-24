@@ -1,0 +1,15 @@
+#version 330 core
+layout (location = 0) in vec3 vec;
+layout (location = 1) in vec3 vecColor;
+layout (location = 2) in vec2 vecTex;
+out vec3 colorVec;
+out vec2 TexVec;
+uniform float offsetx;
+uniform float offsety;
+uniform mat4 transform;
+
+void main()	{
+	gl_Position = transform*vec4(vec.x+offsetx, vec.y+offsety, vec.z, 1.0);
+	colorVec = vecColor;
+	TexVec = vecTex;
+} 
