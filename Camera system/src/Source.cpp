@@ -28,39 +28,17 @@ void processInput(GLFWwindow *window, Shader* shader, float& angle, glm::vec3& c
 		glfwSetWindowShouldClose(window, true);
 	}
 	else if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS) {
-		//shader->setFloat("offsety", -0.5f);
 		alongY+=0.4f*cameraSpeed;
-		angle++;
 	}
 	else if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) {
-		//shader->setFloat("offsety", 0.5f);
-		angle--;
 		alongY -= 0.4f*cameraSpeed;
 	}
 	else if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS) {
-		//shader->setFloat("offsetx", -0.1f);
 		alongX -= 0.4f*cameraSpeed;
 	}
 	else if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS) {
 		alongX += 0.4f*cameraSpeed;
-		//shader->setFloat("offsetx", 0.1f);
 	}
-	else if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
-		alongZ += 0.4f*cameraSpeed;
-		//shader->setFloat("offsetx", 0.1f);
-	}
-	else if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
-		alongZ -= 0.4f*cameraSpeed;
-		//shader->setFloat("offsetx", 0.1f);
-	}
-	//if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-	//	cameraPos += cameraSpeed * cameraFront;
-	//if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-	//	cameraPos -= cameraSpeed * cameraFront;
-	//if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-	//	cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
-	//if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-	//	cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
 }
 
 int main() {
@@ -160,9 +138,6 @@ int main() {
 	glViewport(0, 0, 640, 480);
 
 	glfwSetFramebufferSizeCallback(window, frame_buffer_resizing);
-	float rotateAngle = 0.0f ;
-	float radius = 10.0f;
-	float camCoordX=0.0f, camCoordZ=0.0f;
 
 	glm::vec3 cameraPos   = glm::vec3(0.0f, 0.0f,  -20.0f);
 	glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, 0.5f);
@@ -176,38 +151,23 @@ int main() {
 		glEnable(GL_DEPTH_TEST);
 		glClearColor(1.0f, 1.0f, 0.3f, 0.5f );
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);	//Flushes the color buffer with yellowish color 
-		
-		//glUseProgram(shaderProgram);
 		shader->use();
 		glm::mat4 transform = glm::mat4(1.0f);
-		//transform = glm::rotate(transform, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 0.0f));
 		glm::mat4 projection;
 		projection = glm::perspective(glm::radians(45.0f), 640.0f / 480.0f, 0.1f, 100.0f);
-		//glm::mat4 view = glm::mat4(1.0f);
-		// note that we're translating the scene in the reverse direction of where we want to move
-		/*camCoordX = (float)(radius*sin(glfwGetTime()));
-		camCoordZ = (float)(radius*cos(glfwGetTime()));*/
 		glm::mat4 view = glm::lookAt(glm::vec3(alongX, alongY , alongZ), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-
-		//glm::mat4 view = glm::lookAt(cameraPos,  cameraPos+cameraFront, cameraUp);
-			//glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
 		glUniformMatrix4fv(glGetUniformLocation(shader->ID, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
-		//transform = glm::rotate(transform, rotateAngle, glm::vec3(1.0f, 0.0f, 0.0f));
-		//transform = glm::scale(transform, glm::vec3(abs(sin(glfwGetTime())), abs(sin(glfwGetTime())), abs(sin(glfwGetTime()))));
-			//glm::translate(transform, glm::vec3(0.5f, -1.0f, 0));
 		glUniformMatrix4fv(glGetUniformLocation(shader->ID, "transform"), 1, GL_FALSE, glm::value_ptr(transform));
 		glUniformMatrix4fv(glGetUniformLocation(shader->ID, "view"), 1, GL_FALSE, glm::value_ptr(view));
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
-		//glDrawArray(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-
+		
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
 
 	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &VBO);
-	//glDeleteProgram(shaderProgram);
 
 	glfwTerminate();
 	std::cin.get();
