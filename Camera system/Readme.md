@@ -14,11 +14,11 @@ The camera is set at (0, 2, 2) in world coordinates at start.<br>The textured cu
 ![img](https://github.com/1502shivam-singh/Modern-graphics/blob/master/Camera%20system/images/cube%20image.png)
 <br><br>
 <strong>Left-right strafe of the camera with focus on the box</strong>
-<br><br>
+<br>
 ![img](https://github.com/1502shivam-singh/Modern-graphics/blob/master/Camera%20system/images/strafe.gif)
 <br><br>
 <strong>Up and down movement of the camera, along with the strafe movement.</strong>
-<br><br>
+<br>
 ![img](https://github.com/1502shivam-singh/Modern-graphics/blob/master/Camera%20system/images/up-down.gif)
 <br><br>
 
