@@ -1,0 +1,4 @@
+﻿  Source.cpp
+g:\projects\computer-graphics\cameras-opengl\cameras-opengl\src\shader.h(43): warning C4101: 'e': unreferenced local variable
+  Cameras-opengl.vcxproj -> G:\Projects\Computer-graphics\Cameras-opengl\x64\Debug\Cameras-opengl.exe
+  Cameras-opengl.vcxproj -> G:\Projects\Computer-graphics\Cameras-opengl\x64\Debug\Cameras-opengl.pdb (Partial PDB)
