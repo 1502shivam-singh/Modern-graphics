@@ -1,0 +1,14 @@
+#version 330 core
+layout (location = 0) in vec3 vec;
+layout (location = 1) in vec2 vecTex;
+out vec2 TexVec;
+uniform float offsetx;
+uniform float offsety;
+uniform mat4 transform;
+uniform mat4 projection;
+uniform mat4 view;
+
+void main()	{
+	gl_Position = projection*view*transform*vec4(vec.x+offsetx, vec.y+offsety, vec.z, 1.0);
+	TexVec = vecTex;
+} 
