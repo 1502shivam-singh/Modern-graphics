@@ -1,3 +1,4 @@
 # Textured cube
 
-Cube created using OpenGL 
+Textured cube created using OpenGL 
+
