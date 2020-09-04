@@ -1,0 +1,11 @@
+﻿  Source.cpp
+g:\projects\computer-graphics\cameras-opengl\cameras-opengl\src\shader.h(43): warning C4101: 'e': unreferenced local variable
+g:\projects\computer-graphics\cameras-opengl\cameras-opengl\src\source.cpp(29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\projects\computer-graphics\cameras-opengl\cameras-opengl\src\source.cpp(30): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\projects\computer-graphics\cameras-opengl\cameras-opengl\src\source.cpp(34): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+g:\projects\computer-graphics\cameras-opengl\cameras-opengl\src\source.cpp(35): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+g:\projects\computer-graphics\cameras-opengl\cameras-opengl\src\source.cpp(36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\projects\computer-graphics\cameras-opengl\cameras-opengl\src\source.cpp(37): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+g:\projects\computer-graphics\cameras-opengl\cameras-opengl\src\source.cpp(90): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+  Cameras-opengl.vcxproj -> G:\Projects\Computer-graphics\Cameras-opengl\x64\Debug\Cameras-opengl.exe
+  Cameras-opengl.vcxproj -> G:\Projects\Computer-graphics\Cameras-opengl\x64\Debug\Cameras-opengl.pdb (Partial PDB)
