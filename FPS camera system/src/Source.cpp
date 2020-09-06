@@ -221,19 +221,11 @@ int main() {
 		projection = glm::perspective(glm::radians(fov), 640.0f / 480.0f, 0.1f, 100.0f);
 		glm::vec3 cameraPos = glm::vec3(alongX, alongY, alongZ);
 		glm::mat4 view = glm::lookAt(cameraPos, cameraPos+cameraFront, glm::vec3(0.0f, 1.0f, 0.0f));
-
-		//glm::mat4 view = glm::lookAt(cameraPos,  cameraPos+cameraFront, cameraUp);
-			//glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
 		glUniformMatrix4fv(glGetUniformLocation(shader->ID, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
-		//transform = glm::rotate(transform, rotateAngle, glm::vec3(1.0f, 0.0f, 0.0f));
-		//transform = glm::scale(transform, glm::vec3(abs(sin(glfwGetTime())), abs(sin(glfwGetTime())), abs(sin(glfwGetTime()))));
-		//glm::translate(transform, glm::vec3(0.5f, -1.0f, 0));
 		glUniformMatrix4fv(glGetUniformLocation(shader->ID, "transform"), 1, GL_FALSE, glm::value_ptr(transform));
 		glUniformMatrix4fv(glGetUniformLocation(shader->ID, "view"), 1, GL_FALSE, glm::value_ptr(view));
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
-		//glDrawArray(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
